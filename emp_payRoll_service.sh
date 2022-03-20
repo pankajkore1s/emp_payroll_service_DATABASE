@@ -103,3 +103,27 @@ mysql> select * from employee_payroll
 |  3 | Charlie | 3000000 | 2020-05-21 |
 +----+---------+---------+------------+
 3 rows in set (0.00 sec)
+
+
+#UC6-Ability to add Gender to Employee
+#Payroll Table and Update the Rows to
+#reflect the correct Employee Gender
+
+mysql> ALTER table employee_payroll ADD gender char(1) after name;
+Query OK, 0 rows affected (0.16 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+mysql> update employee_payroll set gender ='M' where name ='Bill' or name ='Charlie';
+Query OK, 2 rows affected (0.01 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+---------+--------+---------+------------+
+| id | name    | gender | salary  | start      |
++----+---------+--------+---------+------------+
+|  1 | Bill    | M      | 1000000 | 2018-01-03 |
+|  2 | Terisa  | F      | 2000000 | 2019-11-13 |
+|  3 | Charlie | M      | 3000000 | 2020-05-21 |
++----+---------+--------+---------+------------+
+3 rows in set (0.00 sec)
