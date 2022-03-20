@@ -49,3 +49,16 @@ mysql> describe employee_payroll;
 | start  | date         | NO   |     | NULL    |                |
 +--------+--------------+------+-----+---------+----------------+
 4 rows in set (0.01 sec)
+
+
+#UC3Ability to create employee
+#payroll data in the payroll
+#service database as part of
+#CRUD Operation
+
+mysql> insert into employee_payroll (name,salary,start) values
+    ->  ('Bill',1000000.00,'2018-01-03'),
+    -> ('Terisa',2000000.00,'2019-11-13'),
+    -> ('Charlie',3000000.00,'2020-05-21');
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
