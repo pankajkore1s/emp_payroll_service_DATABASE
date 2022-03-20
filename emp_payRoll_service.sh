@@ -127,3 +127,58 @@ mysql> select * from employee_payroll;
 |  3 | Charlie | M      | 3000000 | 2020-05-21 |
 +----+---------+--------+---------+------------+
 3 rows in set (0.00 sec)
+
+
+#UC7-using functions like sum,avg,min,max,count
+
+mysql> select gender,sum(salary) gender from employee_payroll group by gender;
++--------+---------+
+| gender | gender  |
++--------+---------+
+| M      | 4000000 |
+| F      | 2000000 |
++--------+---------+
+2 rows in set, 1 warning (0.00 sec)
+
+mysql> select gender,avg(salary) gender from employee_payroll group by gender;
++--------+---------+
+| gender | gender  |
++--------+---------+
+| M      | 2000000 |
+| F      | 2000000 |
++--------+---------+
+2 rows in set, 1 warning (0.00 sec)
+
+mysql> select gender,min(salary) gender from employee_payroll group by gender;
++--------+---------+
+| gender | gender  |
++--------+---------+
+| M      | 1000000 |
+| F      | 2000000 |
++--------+---------+
+2 rows in set, 1 warning (0.00 sec)
+
+mysql> select gender,max(salary) gender from employee_payroll group by gender;
++--------+---------+
+| gender | gender  |
++--------+---------+
+| M      | 3000000 |
+| F      | 2000000 |
++--------+---------+
+2 rows in set, 1 warning (0.00 sec)
+
+mysql> select count(*)from employee_payroll;
++----------+
+| count(*) |
++----------+
+|        3 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select avg(salary) from employee_payroll;
++-------------+
+| avg(salary) |
++-------------+
+|     2000000 |
++-------------+
+1 row in set (0.00 sec)
